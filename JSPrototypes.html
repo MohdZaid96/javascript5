@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Prototypes</title>
+	<script>
+		/*
+			## Prototype: Original model for all data type, rest of the data types will copy pattern from the original model
+			## __proto__ : Access this property to know the prototype of the data
+
+			## Prototypal chain:
+			// obj1 -> Object -> null
+			// arr1 -> Array -> Object -> null
+			// num1 -> Number -> Object -> nul
+			// str1 -> String -> Object -> null
+
+			## Object.create()
+
+			## hasOwnProperty()
+		*/
+
+		// const obj1 = {
+		// 	a: 5,
+		// 	b: 10
+		// }
+		// console.log(obj1)
+		// console.log(obj1.__proto__.__proto__)
+
+		// const arr1 = [4, 2, 10, 6, 7]
+		// console.log(arr1.__proto__.__proto__.__proto__)
+
+		// const num1 = new Number(5)
+		// console.log(num1)
+
+		// const str1 = new String('Hi')
+		// console.log(str1.__proto__)		
+
+		// Object.create()
+		// let obj1 = {
+		// 	a: 5,
+		// 	b: 10
+		// }
+		// let obj2 = {
+		// 	c: 15,
+		// 	d: 20
+		// }
+
+		// let obj2 = Object.create(obj1)
+		// obj2.c = 15
+		// obj2.d = 20
+
+		// console.log(obj2.a)
+
+		// const cat = {
+		// 	legs: 4,
+		// 	tail: true,
+		// 	claws: "sharp",
+		// 	moustache: true,
+		// };
+
+		// const tiger = {
+		// 	legs: 4,
+		// 	tail: true,
+		// 	claws: "sharp",
+		// 	moustache: true,
+		// 	speed: 60,
+		// 	color: "orange",
+		// 	weight: "300kgs",
+		// 	climb: false,
+		// };
+
+		// const tiger = Object.create(cat)
+		// tiger.speed = 60
+		// console.log(tiger)
+
+		/* ---------------------------------------------------------------- */
+		// ## hasOwnProperty()
+		// const grandfather = {
+		// 	dna: 'DNA1',
+		// 	lastName: 'Sharma'
+		// }
+
+		// const father = Object.create(grandfather)
+		// father.houseName = 'Ashiyana'
+
+		// const son = Object.create(father)
+		// son.firstName = 'Aryan'
+		// son.age = 23
+
+		// console.log(son)
+		// console.log(son.lastName)
+		// console.log(son.hasOwnProperty('lastName'))
+		// Prototypal chain: son -> father -> grandfather -> Object -> null
+
+		/* ---------------------------------------------------------------- */
+
+		// ## prototype property: Use this with constructors to add new properties to the prototype
+		// function Student(batchNo, techStack) {
+		// 	this.batchNo = batchNo
+		// 	this.techStack = techStack
+		// }
+
+		// Student.prototype.country = 'India'
+
+		// const sahilDetails = new Student(5, 'MERN')
+		// console.log(sahilDetails)
+
+		/* ---------------------------------------------------------------- */
+		// JS Constructor Inheritance
+		// - .call()
+		// - Object.setPrototypeOf(): inherit all prototype properties and methods
+		function Person(firstName, lastName) {
+			this.firstName = firstName
+			this.lastName = lastName
+		}
+		Person.prototype.displayFullName = function () {
+			console.log(this.firstName + ' ' + this.lastName)
+		}
+
+		let person1 = new Person('Nikita', 'Gupta')
+		console.log(person1)
+
+		function Student(firstName, lastName, batchNo, techStack) {
+			Person.call(this, firstName, lastName)
+			this.batchNo = batchNo
+			this.techStack = techStack
+		}
+
+		Object.setPrototypeOf(Student.prototype, Person.prototype)
+
+		let student1 = new Student('Sagar', 'Wale', 15, 'MEVN')
+		console.log(student1)
+		student1.displayFullName()
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

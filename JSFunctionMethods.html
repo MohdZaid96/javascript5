@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Function Methods</title>
+	<script>
+		/*
+			## JS Function Methods
+			- call
+			- apply
+			- bind
+		*/
+
+		var anjaliDetails = {
+			firstName: 'Anjali',
+			lastName: 'A P',
+		}
+
+		var himanshuDetails = {
+			firstName: 'Himanshu',
+			lastName: 'Thakur'
+		}
+
+		function displayFullName (country, state) {
+			console.log(this.firstName + ' ' + this.lastName, country, state)
+		}
+
+		// call() -> invoked immediately
+		// displayFullName.call(anjaliDetails, 'India', 'Maharashtra')
+		// displayFullName.call(himanshuDetails)
+
+		// apply() -> invoked immediately
+		// displayFullName.apply(anjaliDetails, ['India', 'Maharashtra'])
+		// displayFullName.apply(himanshuDetails)
+
+		// bind() -> returns an updated function
+		// let displayFullNameWithAnjaliDetailsScope = displayFullName.bind(anjaliDetails)
+		// displayFullNameWithAnjaliDetailsScope()
+
+		// let displayFullNameWithHimanshuDetails = displayFullName.bind(himanshuDetails, 'India', 'Maharashtra')
+		// displayFullNameWithHimanshuDetails()
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

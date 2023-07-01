@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Basics</title>
+	<script>
+		/*
+			## Data Types:
+			- Primitive
+				- Number
+				- String
+				- Boolean
+				- undefined (default)
+				- null (Empty placeholder)
+			- Non-Primitive
+				- Objects
+
+			## undefined vs null
+			var anujDetails = {
+				firstName: 'Anuj',
+				batch: 12,
+				pet: 'Dog'
+			}
+			var chiragDetail = {
+				firstName: 'Chiraj',
+				batch: 10,
+				pet: null
+			}
+			console.log(chiragDetail.pet)
+
+			## Declaration, Initialization, Re-assignment
+			// var x // Declaration
+			// var x = 5 // Initialization
+			// x = 10 // Re-assignment
+
+			## Type coercion (Implicit conversion)
+			'5' == 5 // true
+
+			## == vs ===
+			==: Equality operator (Value is compared)
+			===: Strict equality operator (Value with data type is compared)
+
+			## Arrays (Mutable) vs Strings (Immutable)
+			// var arr = [3, 1, 5, 2, 4]
+			// arr[2] = 10
+			// console.log(arr)
+
+			## Object.freeze() -> Makes objects immutable
+			var anujDetails = {
+				firstName: 'Anuj',
+				batch: 12,
+				pet: 'Dog'
+			}
+
+			Object.freeze(anujDetails)
+			anujDetails.batch = 15
+			console.log(anujDetails.batch)
+
+			// var anujDetails = {
+			// 	firstName: 'Anuj',
+			// 	batch: 12,
+			// 	pet: 'Dog'
+			// }
+			// anujDetails.batch = 15
+			// console.log(anujDetails.batch)
+
+			// var str = 'Akshay'
+			// str[3] = 't'
+			// console.log(str)
+
+			## Hoisting: Declaration in JS get hoisted to the top of the execution context during JS runtime
+			console.log(a)
+			var a
+
+			abc()
+			function abc() {
+				console.log('abc')
+			}
+
+			## Scopes: Accessibility of a specific variable
+			- Global Scope
+			- Function/Local Scope
+			- Block scope
+
+			// var x = 10 // Global scope
+			// function abc() {
+			// 	var x = 50 // Function/Local scope
+			// }
+			// abc()
+			// console.log(x)
+
+			## let, const (block scope)
+			// if(10 > 5) {
+			// 	let x = 10
+			// }
+			// console.log(x)
+
+			// const country = 'India'
+			// country = 'USA'
+			// console.log(country)
+		*/
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

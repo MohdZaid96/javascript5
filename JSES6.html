@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS ES6</title>
+	<script>
+		/*
+			1. let, const
+
+			2. Arrow function (=>)
+			- Single expression to execute or single expression/value to return, {} and return keyword can also be skipped
+
+			// function sum (a, b) {
+			// 	return a + b
+			// }
+			// const sum = function (a, b) {
+			// 	return a + b
+			// }
+
+			// const sum = (a, b) => a + b
+			// console.log(sum(5, 10))
+			// const sayHi = () => console.log('Hi')
+			// sayHi()
+
+			3. for of
+			// let arr = [3, 4, 5, 10]
+			// arr.forEach((element, index) => {
+			// 	console.log(index, element)
+			// })
+			// for(let element of arr) {
+			// 	console.log(element)
+			// }
+
+			4. Destructuring
+			// let anjaliDetails = {
+			// 	firstName: 'Anjali',
+			// 	lastName: 'A P',
+			// 	batch: 10,
+			// }
+
+			// let firstName = anjaliDetails.firstName
+			// let lastName = anjaliDetails.lastName
+			// let batch = anjaliDetails.batch
+
+			// let {
+			// 	firstName,
+			// 	lastName,
+			// 	batch,
+			// } = anjaliDetails;
+			// console.log(`My name is ${firstName} ${lastName}. I'm currently studying in Batch ${batch}.`)
+
+			let anjaliDetails = {
+				firstName: 'Anjali',
+				lastName: 'A P',
+				batch: 10,
+				address : {
+					city: 'Mumbai',
+					country: 'India',
+					line: {
+						address1: 'XYZ',
+						address2: 'ABC'
+					}
+				}
+			}
+
+			let {
+				firstName,
+				batch,
+				address: {
+					city,
+					line: {
+						address1
+					}
+				}
+			} = anjaliDetails;
+
+			console.log(firstName, batch, city, address1)
+
+			5. Spread (...)
+			// let arr1 = [1, 2, 3, 4]
+			// let arr2 = [5, 6, 7, 8]
+			// let arr3 = arr1.concat(arr2)
+			// console.log(arr3)
+			// let arr3 = [...arr1, ...arr2]
+			// console.log(arr3)
+		*/
+
+	</script>
+</head>
+<body>
+	<h1>ES6</h1>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>APIs and Fetch method</title>
+	<script>
+		/*
+			## API:
+				- Application Programmer Interface
+				- Medium through which client interacts with the server
+				- Client 'requests' from information, server 'responds' with information back to the client with the help of APIs
+
+			## HTTPS Request Methods:
+			- GET: Fetch any information from the server
+			- POST: Add / Create information on the server, usually information to add (payload) is sent to the server as well.
+			- PUT/PATCH: Update the information on the server
+			- DELETE: Delete the information on the server
+
+			## Response status code
+			- 200: Successful
+			- 404: Not found (Error)
+
+			fetch(): Used to handle API calls
+			- returns a promise
+			- this can be handled using .then() and .catch()
+		*/
+
+		// API Example 1: https://reqres.in/api/users (List of users)
+
+		// fetch('https://reqres.in/api/users')
+		// 	.then((res) => {
+		// 		return res.json()
+		// 	}).then((resData) => {
+		// 		displayUserData(resData.data)
+		// 	}).catch((err) => {
+		// 		console.log(err)
+		// 	})
+
+		// const displayUserData = (users) => {
+		// 	let userListUL = document.getElementById('users-list')
+		// 	users.forEach((user) => {
+		// 		let li = document.createElement('li')
+		// 		li.innerText = `${user.first_name} ${user.last_name}`
+		// 		userListUL.appendChild(li)
+		// 	})
+		// }
+	</script>
+</head>
+<body>
+	<ul id="users-list"></ul>
+</body>
+</html>
+
+<!--
+	Promise chaining
+-->

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Promises</title>
+	<script>
+		/*
+			Promise: 
+			- JavaScript object that keeps track of the eventual completion (resolve) or failure (reject) of any asynchronous task.
+			- Two properties: state, result
+		
+			States: 
+			- pending
+			- resolved (fulfilled)
+			- rejected
+
+			# Promise can be created using Promise Constructor
+			 - Syntax: 
+			 	- new Promise(function (resolve, reject) {})
+				- new Promise((resolve, reject) => {})
+
+			let promise1 = new Promise((resolve, reject) => {
+				resolve('Hi')
+			})
+			let promise1 = new Promise((resolve, reject) => {
+				reject('Bye')
+			})
+			let promise1 = new Promise((resolve, reject) => {
+				setTimeout(() => {
+					resolve()
+				}, 5000)
+			})
+
+			# Handling promise: 2 methods which we chain to the promise object
+			- then() callback: Handle the resolved state
+			- catch() callback: Handle the rejected state
+			Syntax: 
+			- promise1.then().catch()
+			- promise1.then(() => {}).catch(() => {})
+		*/	
+		
+		// 1. Declare the promise
+		// let promise1 = new Promise((resolve, reject) => {
+		// 	setTimeout(() => {
+		// 		reject(5)
+		// 	}, 5000)
+		// })
+
+		// 2. Handle the promise
+		// promise1.then((resolvedValue) => {
+		// 	console.log('Hi', resolvedValue)
+		// }).catch((rejectedValue) => {
+		// 	console.log('Bye', rejectedValue)
+		// })
+
+		// finally : Executes regardless of resolved/rejected
+		// promise1.then((resolvedValue) => {
+		// 	console.log('Hi', resolvedValue)
+		// }).catch((rejectedValue) => {
+		// 	console.log('Bye', rejectedValue)
+		// }).finally(() => {
+		// 	console.log('Promise handling complete!')
+		// })
+
+		// Example: API which takes 10 secs to return [{name: 'Akash', batchNo: 5}, {name: 'Akhil', batchNo: 10}]
+		// let studentsAPI = new Promise((resolve, reject) => {
+		// 	let dataInDB = [{ name: 'Akash', batchNo: 5 }, { name: 'Akhil', batchNo: 10 }]
+		// 	// Mimic the API behaviour using setTimeout
+		// 	setTimeout(() => {
+		// 		// resolve(dataInDB)
+		// 		reject('Server is down')
+		// 	}, 1000)
+		// })
+
+		// console.log('Fetching data ...')
+		// studentsAPI.then((students) => {
+		// 	console.log('Fetched data successfully: ', students)
+		// }).catch((error) => {
+		// 	console.log('Data could not be fetched: ', error)
+		// })
+
+		// Example: Handling coin toss using promises
+		// const getRandomBoolean = () => {
+		// 	return Math.round(Math.random());
+		// }
+
+		// let coinToss = new Promise((resolve, reject) => {
+		// 	setTimeout(() => {
+		// 		const result = getRandomBoolean()
+		// 		if(result == 0){
+		// 			resolve('Heads')
+		// 		}else{
+		// 			reject(`Tail`)
+		// 		}
+		// 	}, 2000)
+		// });
+
+		// coinToss.then((res)=>{
+		// 	console.log(res)
+		// }).catch((err)=>{
+		// 	console.log(err)
+		// })
+
+		// # Promise.all: 
+		// - To handle multiple promises together
+		// - Resolve, if all promises resolve, else will reject
+		// let promise1 = new Promise((resolve, reject) => {
+		// 	setTimeout(() => {
+		// 		resolve(100)
+		// 	}, 2000)
+		// })
+
+		// let promise2 = new Promise((resolve, reject) => {
+		// 	setTimeout(() => {
+		// 		reject(200)
+		// 	}, 6000)
+		// })
+
+		// let promiseArray = [promise1, promise2]
+		// Promise.all(promiseArray).then((resolvedValue) => {
+		// 	console.log('Hi', resolvedValue)
+		// }).catch((rejectedValue) => {
+		// 	console.log('Bye', rejectedValue)
+		// })
+
+		// ## Async Await
+		// 1. Declare the promise
+		// let promise1 = new Promise((resolve, reject) => {
+		// 	setTimeout(() => {
+		// 		reject(5)
+		// 	}, 2000)
+		// })
+
+		// 2. Handle the promise
+		// promise1.then((resolvedValue) => {
+		// 	console.log('Hi', resolvedValue)
+		// }).catch((rejectedValue) => {
+		// 	console.log('Bye', rejectedValue)
+		// })
+
+		// await: greedy for 'resolved state' and returns the resolvedValue
+
+		// const handlePromise = async () => {
+		// 	try {
+		// 		let resolvedValue = await promise1
+		// 		console.log(resolvedValue)
+		// 	} catch (rejectedValue) {
+		// 		console.log(rejectedValue)
+		// 	}
+		// }
+		// handlePromise()
+
+		// async function handlePromise () {}
+		// let handlePromise = async function () {}
+		// let handlePromise = async () => {}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
+
+<!--
+	Math.random: Generate any random number between 0 and 1
+-->

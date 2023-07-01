@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Classes</title>
+	<script>
+		/*
+			## JS Classes
+			- Templates/ Blueprints for objects
+			- Name of the class should be in PascalCase
+			- Syntactic sugar for JS Constructors
+
+			Syntax:
+			class [ClassName] {
+				constructor() {
+					
+				}
+			}
+
+			## constructor method
+			- Default method required for instantiating an object
+			- This gets invoked when an object is created from a class
+		*/
+
+		/* -------------------------------- */
+
+		// function Student(firstName, lastName) {
+		// 	this.firstName = firstName
+		// 	this.lastName = lastName
+		// 	this.displayFullName = function () {
+		// 		console.log(this.firstName + ' ' + this.lastName)
+		// 	}
+		// }
+
+		// class Student {
+		// 	constructor(firstName, lastName) {
+		// 		this.firstName = firstName
+		// 		this.lastName = lastName
+		// 		this.displayFullName = function () {
+		// 			console.log(this.firstName + ' ' + this.lastName)
+		// 		}
+		// 	}
+		// }
+
+		// const abhishekDetails = new Student('Abhishek', 'Raj')
+		// console.log(abhishekDetails)
+		// abhishekDetails.displayFullName()
+
+		// const nikitaDetails = new Student('Nikita', 'Gupta')
+		// console.log(nikitaDetails)
+		// nikitaDetails.displayFullName()
+
+		/* -------------------------------- */
+
+		// class Student {
+		// 	constructor(firstName, lastName, country) {
+		// 		this.firstName = firstName
+		// 		this.lastName = lastName
+		// 		this.country = country
+		// 	}
+
+		// 	// Getter methods
+		// 	displayFullName () {
+		// 		console.log(this.firstName + ' ' + this.lastName)
+		// 	}
+
+		// 	// Setter methods
+		// 	updateCountryValue (newCountry) {
+		// 		this.country = newCountry
+		// 	}
+		// }
+
+		// const abhishekDetails = new Student('Abhishek', 'Raj', 'USA')
+		// // abhishekDetails.displayFullName()
+		// abhishekDetails.updateCountryValue('IND')
+		// console.log(abhishekDetails)
+
+		// const nikitaDetails = new Student('Nikita', 'Gupta', 'UAE')
+		// console.log(nikitaDetails)
+		// nikitaDetails.displayFullName()
+
+		/* -------------------------------- */
+		// ## static properties and methods: These belong to class, not to individual objects
+
+		// class Student {
+		// 	constructor(firstName, lastName, country) {
+		// 		this.firstName = firstName
+		// 		this.lastName = lastName
+		// 		this.country = country
+		// 		Student.totalStudentsCount++
+		// 	}
+
+		// 	static totalStudentsCount = 0
+
+		// 	static getTotalStudentCount () {
+		// 		return Student.totalStudentsCount
+		// 	}
+		// }
+
+		// const abhishekDetails = new Student('Abhishek', 'Raj', 'USA')
+		// console.log(abhishekDetails)
+
+		// const nikitaDetails = new Student('Nikita', 'Gupta', 'UAE')
+		// console.log(nikitaDetails)
+
+		// console.log(Student.totalStudentsCount)
+		// console.log(Student.getTotalStudentCount())
+
+		/* -------------------------------- */
+		/*
+			Create a class to save details of people registering for vaccination in CityHospital 
+			1. Full Name
+			2. Gender
+			3. Age
+			4. isFirstDose
+			5. A method to display details of this person
+			6. A method to update isFirstDose value
+			7. A method to to return number of people registered
+		*/
+
+		// class PeopleRegisteredInCityHospital {
+		// 	constructor(fullName, gender, age, isFirstDose) {
+		// 		this.fullName = fullName
+		// 		this.gender = gender
+		// 		this.age = age
+		// 		this.isFirstDose = isFirstDose
+
+		// 		PeopleRegisteredInCityHospital.numberOfPeopleRegistered++
+		// 	}
+
+		// 	getPersonDetails () {
+		// 		const { fullName, gender, age, isFirstDose } = this
+		// 		console.log(fullName, gender, age, isFirstDose)
+		// 	}
+
+		// 	updateIsFirstDose (newValue) {
+		// 		this.isFirstDose = newValue
+		// 	}
+
+		// 	static numberOfPeopleRegistered = 0
+		// 	static getNumberOfpeopleRegistered () {
+		// 		console.log(PeopleRegisteredInCityHospital.numberOfPeopleRegistered)
+		// 	}
+		// }
+
+		// const chirag = new PeopleRegisteredInCityHospital('Chirag', 'Male', 24, true)
+		// chirag.updateIsFirstDose(false)
+		// chirag.getPersonDetails()
+
+		// const gaurav = new PeopleRegisteredInCityHospital('Gaurav', 'Male', 21, false)
+		// PeopleRegisteredInCityHospital.getNumberOfpeopleRegistered()
+
+		/* -------------------------------- */
+		// ## Inheritance: Child class has access to parent class properties and methods
+		// - extends: establish relationship between parent and child classes
+		// - super(): used to invoke parent class constructor
+
+		class Person {
+			constructor(firstName, lastName) {
+				this.firstName = firstName
+				this.lastName = lastName
+			}
+
+			getFullName() { 
+				console.log(this.firstName + ' ' + this.lastName)
+			}
+		}
+
+		class Student extends Person {
+			constructor(firstName, lastName, batchNo, techStack) {
+				super(firstName, lastName)
+				this.batchNo = batchNo
+				this.techStack = techStack
+			}
+		}
+
+		const student1 = new Student('Mahesh', 'Narker', 12, 'MERN')
+		console.log(student1)
+		student1.getFullName()
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

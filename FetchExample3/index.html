@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #container > div {
+        width: 30%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #cecece;
+        padding: 10px;
+      }
+      img {
+        width: 400px;
+      }
+    </style>
+    <title>OMDB API</title>
+  </head>
+  <body>
+    
+    <h1>OMDB MOVIES</h1>
+    <input type="text" id="searchParam" />
+    <button onclick="getData()">Search</button>
+    <div id="container"></div>
+
+
+
+    <script>
+      let API_KEY = "2126f673";
+      let container = document.getElementById("container");
+			
+      function getData() {
+				let searchParam = document.getElementById("searchParam").value;
+				let res = {}
+				fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&t=${searchParam}`)
+				.then(function(res) {
+					return res.json()
+				})
+				.then((data) => {
+					console.log(data);		
+					if (data.Error) {
+						container.innerHTML = "";
+						let errorDiv = document.createElement("div");
+						errorDiv.innerHTML = data.Error;
+						container.append(errorDiv);
+					} else {
+						displayData(data);
+					}
+				}).catch(function(err) {
+					console.log(err)
+				})
+      }
+
+      function displayData(movie) {
+        container.innerHTML = "";
+        let movieCard = document.createElement("div");
+
+        let poster = document.createElement("img");
+        poster.src = movie.Poster;
+
+        let title = document.createElement("p");
+        title.textContent = movie.Title;
+
+        let releaseDate = document.createElement("p");
+        releaseDate.textContent = movie.Released;
+
+        movieCard.append(poster, title, releaseDate);
+        container.append(movieCard);
+      }
+    </script>
+  </body>
+</html>

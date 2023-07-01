@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+		/*
+			Synchronous: Exececutes expression line by line, blocking
+			Asynchronous: Not necessarily executes expression line by line, non-blocking
+		*/
+
+		// console.log(1)
+		// console.log(2)
+		// console.log(3)
+		// console.log(4)
+		// console.log(5)
+
+		// JS Execution Context: Environment where js code is executed.
+		// JS Execution Phases: 1. Creation (hoisting happens here) 2. Execution
+		
+		// function sum(a, b) {
+		// 	return a + b
+		// }
+		// console.log(sum(3, 5))
+
+		/* -------------------------------- */
+		// ## setTimeout(): Used to execute expression after sepcific amount of time
+		// - 2 arguments: 1. Callback with the expression to execute 2. Time in ms
+
+		// setTimeout(function () {
+		// 	console.log('Hi students!')
+		// }, 1000)
+
+		// console.log(1)
+		// console.log(2)
+		// setTimeout(function() {
+		// 	console.log(3)
+		// }, 0)
+		// console.log(4)
+		// console.log(5)
+
+		// console.log(1)
+		// console.log(2)
+		// setTimeout(function() {
+		// 	console.log(3)
+		// }, 4000)
+		// setTimeout(function() {
+		// 	console.log(4)
+		// }, 4000)
+		// console.log(5)
+		// console.log(6)
+
+		// ## setInterval(): Used to execute expression repeatedly after sepcific time intervals
+		// - clearInterval() method can be used to clear the time interval created
+		// setInterval(function () {
+		// 	console.log('Hi')
+		// }, 1000)
+	</script>
+</head>
+<body>
+	<!-- <div style="text-align: center;">
+		<p>Bomb will explode in</p>
+		<p style="font-size: 10em;" id="timer">10</p>	
+		<button onclick="difuseBomb()" style="text-align: center;">Difuse bomb!</button>
+	</div> -->
+
+	<script>
+		// let timer = 5
+		// document.getElementById("timer").innerText = timer
+
+		// let timeInterval = setInterval(function () {
+		// 	timer--
+		// 	document.getElementById("timer").innerText = timer
+		// 	if(timer == 0) {
+		// 		document.getElementById("timer").innerText = 'BOOM!'
+		// 		clearInterval(timeInterval)
+		// 	}
+		// }, 1000)
+
+		// function difuseBomb() {
+		// 	clearInterval(timeInterval)
+		// 	document.getElementById("timer").innerText = 'DIFUSED!'
+		// }
+	</script>
+</body>
+</html>
+
+<!--
+	// JS Memory: Stack (Primitive), Heap (Non Primitive)
+-->
